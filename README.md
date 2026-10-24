@@ -70,13 +70,13 @@ A lightweight distributed job processing service built with Java, Spring Boot, a
 
 Jobs move through the following statuses:
 
-| Status | Description |
-|--------|-------------|
-| PENDING | Job has been submitted and is waiting for execution |
-| RUNNING | A worker has claimed the job |
-| RETRYING | Job failed and is scheduled for another attempt |
-| COMPLETED | Job executed successfully |
-| FAILED | Job exhausted its allowed retries |
+| Status    | Description                                         |
+| --------- | --------------------------------------------------- |
+| PENDING   | Job has been submitted and is waiting for execution |
+| RUNNING   | A worker has claimed the job                        |
+| RETRYING  | Job failed and is scheduled for another attempt     |
+| COMPLETED | Job executed successfully                           |
+| FAILED    | Job exhausted its allowed retries                   |
 
 Each job has a unique UUID, job type, retry count, maximum retries, creation timestamp, and scheduled execution timestamp.
 
@@ -154,11 +154,11 @@ When a job fails, the application checks its retry count and schedules another e
 
 It uses exponential backoff:
 
-| Retry | Delay |
-|-------|-------|
-| 1 | 2 seconds |
-| 2 | 4 seconds |
-| 3 | 8 seconds |
+| Retry | Delay     |
+| ----- | --------- |
+| 1     | 2 seconds |
+| 2     | 4 seconds |
+| 3     | 8 seconds |
 
 After the third retry fails, the job is marked `FAILED` and removed from the pending queue.
 
@@ -182,7 +182,7 @@ These jobs simulate background work rather than sending actual emails or generat
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/distributed-job-scheduler.git
+git clone https://github.com/Mihir16x/Distributed-Job-Scheduler.git
 cd distributed-job-scheduler
 ```
 
